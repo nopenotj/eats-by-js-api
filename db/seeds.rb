@@ -6,20 +6,21 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Restaurant.create([
-    {
-        title: "Jay's toppokki Restaurant",
-        description: "best toppoki in the world",
-        rating: 5
-    },
-    {
-        title: "Jerryl's toppokki Restaurant",
-        description: "best toppoki in the world",
-        rating: 5
-    },
-    {
-        title: "Aerin's toppokki Restaurant",
-        description: "worst toppoki in the world",
-        rating: 1
-    },
-])
+# Restaurants
+jay_res = Restaurant.create( title: "Jay's toppokki Restaurant", description: "best toppoki in the world", rating: 5)
+jerryl_res = Restaurant.create( title: "Jerryl's toppokki Restaurant", description: "best toppoki in the world", rating: 5)
+aer_res = Restaurant.create( title: "Aerin's toppokki Restaurant", description: "worst toppoki in the world", rating: 1)
+
+# Dishes
+jay_res.dishes.create( title: "jay's toppoki", description: "best toppoki in the world", price: 69) 
+jerryl_res.dishes.create( title: "jerryl's toppoki", description: "best toppoki in the world", price: 69)
+aer_res.dishes.create( title: "aerin's toppoki", description: "worst toppoki in the world", price: 2)
+
+# Tags
+chinese = Tag.create(name: "chinese")
+korean = Tag.create(name: "korean")
+noodles = Tag.create(name: "noodles")
+
+jay_res.tags << [chinese,korean,noodles]
+jerryl_res.tags << [chinese,korean,noodles]
+aer_res.tags << [chinese,korean,noodles]
