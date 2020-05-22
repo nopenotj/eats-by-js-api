@@ -1,7 +1,13 @@
 class DishesController < ApplicationController
 
   def index
-    dishes = get_restaurant.dishes
+    dishes = []
+    if params[:restaurant_id].nil?
+      dishes = Dish.all 
+    else
+      dishes = get_restaurant.dishes
+    end
+
     render json: DishSerializer.new(dishes).serialized_json
   end
   def show
