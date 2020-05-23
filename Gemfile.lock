@@ -56,6 +56,7 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2, >= 2.2.2)
+    bcrypt (3.1.13)
     bootsnap (1.4.6)
       msgpack (~> 1.0)
     builder (3.2.4)
@@ -76,6 +77,19 @@ GEM
       activesupport (>= 4.2.0)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
+    jwt (2.2.1)
+    kaminari (1.2.0)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.2.0)
+      kaminari-activerecord (= 1.2.0)
+      kaminari-core (= 1.2.0)
+    kaminari-actionview (1.2.0)
+      actionview
+      kaminari-core (= 1.2.0)
+    kaminari-activerecord (1.2.0)
+      activerecord
+      kaminari-core (= 1.2.0)
+    kaminari-core (1.2.0)
     listen (3.2.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -148,6 +162,7 @@ GEM
       rspec-mocks (~> 3.9)
       rspec-support (~> 3.9)
     rspec-support (3.9.3)
+    simple_command (0.1.0)
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -173,15 +188,19 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt
   bootsnap (>= 1.4.2)
   byebug
   factory_bot_rails
   fast_jsonapi
+  jwt
+  kaminari
   listen (~> 3.2)
   pg
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.1)
   rspec-rails
+  simple_command
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3 (~> 1.4)

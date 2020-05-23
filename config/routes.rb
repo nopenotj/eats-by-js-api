@@ -12,4 +12,9 @@ Rails.application.routes.draw do
   resources :tags, only: [:index, :show] do
     resources :restaurants, only: [:index, :show]
   end
+
+  post '/sign_up', to: 'user#create'
+
+  post 'authenticate', to: 'authentication#authenticate'
+  get 'profile', to: 'user#profile'
 end

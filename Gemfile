@@ -10,6 +10,10 @@ gem 'puma', '~> 4.1'
 gem 'rspec-rails'
 gem 'factory_bot_rails'
 gem 'fast_jsonapi'
+gem 'bcrypt'
+gem 'kaminari'
+gem 'jwt'
+gem 'simple_command'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.7'
