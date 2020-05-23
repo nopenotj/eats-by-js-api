@@ -4,7 +4,7 @@ class TagsController < ApplicationController
       if params[:restaurant_id].nil?
         tags = Tag.all
       else
-        tags = get_restaurant.dishes
+        tags = get_restaurant.tags
       end
       render json: TagSerializer.new(tags).serialized_json
     end
