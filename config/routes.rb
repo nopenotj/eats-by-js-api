@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :restaurants, only: [:index, :show] do
     resources :dishes, only: [:index, :show]
     resources :tags, only: [:index, :show]
+    resources :reviews
   end
 
   resources :dishes, only: [:index, :show] do

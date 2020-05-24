@@ -5,6 +5,7 @@ class Restaurant < ApplicationRecord
     attribute :rating
 
 
+    has_many :reviews
     has_many :dishes, dependent: :destroy
     has_and_belongs_to_many :tags 
 end

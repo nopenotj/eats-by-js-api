@@ -4,4 +4,5 @@ class RestaurantSerializer
 
     has_many :dishes, dependent: :destroy
     has_many :tags 
+    has_many :reviews 
   end
