@@ -1,6 +1,5 @@
 class RestaurantsController < ApplicationController
   def index
-    pp request.authorization()
     restaurants = Restaurant.all
       .page(params[:page])
       .per(params[:per_page])

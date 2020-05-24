@@ -9,6 +9,7 @@ class UserController < ApplicationController
   end
 
   def profile
-    render json: {"ok": current_user}
+    authenticate_request
+    render json: UserSerializer.new(current_user).serialized_json unless current_user.nil?
   end
 end

@@ -24,3 +24,7 @@ noodles = Tag.create(name: "noodles")
 jay_res.tags << [chinese,korean,noodles]
 jerryl_res.tags << [chinese,korean,noodles]
 aer_res.tags << [chinese,korean,noodles]
+
+jay_res.pictures.attach(io: File.open('app/assests/images/restaurants/1.png'), filename: 'restaurant_front.png')
+jerryl_res.pictures.attach(io: File.open('app/assests/images/restaurants/2.png'), filename: 'restaurant_front.png')
+aer_res.pictures.attach(io: File.open('app/assests/images/restaurants/3.png'), filename: 'restaurant_front.png')
