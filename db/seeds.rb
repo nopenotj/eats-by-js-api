@@ -25,3 +25,6 @@ jay_res.tags << [chinese,korean,noodles]
 jerryl_res.tags << [chinese,korean,noodles]
 aer_res.tags << [chinese,korean,noodles]
 
+jay_res.update(image_link: "https://letyourheartspeaks.files.wordpress.com/2018/01/image6.jpeg?w=1060" )
+jerryl_res.update(image_link: "https://www.capitaland.com/content/dam/capitaland-malaysia-tenants/the-mines/myeongdong-topokki.jpg.transform/cap-lowres/image.jpg" )
+aer_res.update(image_link: "https://www.gardeningknowhow.com/wp-content/uploads/2019/04/lawn-pH.jpg" )
