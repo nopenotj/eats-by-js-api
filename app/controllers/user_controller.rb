@@ -1,4 +1,7 @@
 class UserController < ApplicationController
+  def show
+    render json: {username: User.find(params[:id]).username}
+  end
   def create
     @user = User.create(params.require(:user).permit(:username,:password))
     if @user.valid?
