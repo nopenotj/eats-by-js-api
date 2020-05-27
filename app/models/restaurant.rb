@@ -2,7 +2,6 @@ class Restaurant < ApplicationRecord
     attribute :title
     attribute :description
     attribute :price
-    attribute :rating
 
 
     has_many :reviews
