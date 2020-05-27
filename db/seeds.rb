@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Restaurants
-jay_res = Restaurant.create( title: "Jay's toppokki Restaurant", description: "best toppoki in the world", rating: 5)
-jerryl_res = Restaurant.create( title: "Jerryl's toppokki Restaurant", description: "best toppoki in the world", rating: 5)
-aer_res = Restaurant.create( title: "Aerin's toppokki Restaurant", description: "worst toppoki in the world", rating: 1)
+jay_res = Restaurant.create( title: "Jay's toppokki Restaurant", description: "best toppoki in the world", price: 5)
+jerryl_res = Restaurant.create( title: "Jerryl's toppokki Restaurant", description: "best toppoki in the world", price: 5)
+aer_res = Restaurant.create( title: "Aerin's toppokki Restaurant", description: "worst toppoki in the world", price: 1)
 
 # Dishes
 jay_res.dishes.create( title: "jay's toppoki", description: "best toppoki in the world", price: 69) 
