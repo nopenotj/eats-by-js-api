@@ -1,0 +1,404 @@
+{
+    "restaurants_data": [
+        {
+            "title": "Arise & Shine",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/05/E4-Arise-n-Shine-2-1024x768.jpg",
+            "location": "Engineering Block E4",
+            "operating_hours": "Mon-Fri, 7.00am-8.00pm\nSat/Sun/PH, 7.00am-3.00pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "N/A",
+            "contact": "N/A"
+        },
+        {
+            "title": "Arise & Shine",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2019/07/S16-Arise-n-Shine-1024x769.jpg",
+            "location": "Science Block S16",
+            "operating_hours": "Mon-Fri, 7.00am-8.00pm\nSat/Sun/PH, 7.00am-3.00pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "N/A",
+            "contact": "6776 4574"
+        },
+        {
+            "title": "Atempo",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2019/08/Atempo-1024x684.jpg",
+            "location": "Yong Siew Toh Conservatory of Music (YSTCM)",
+            "operating_hours": "Mon-Fri, 8.30am-5.00pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "N/A",
+            "contact": "N/A"
+        },
+        {
+            "title": "Bar Bar Black Sheep",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/09/KR-front-1024x654.jpeg",
+            "location": "Alice Lee Plaza",
+            "operating_hours": "Mon-Sun, 12.00pm-12.00am",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "N/A",
+            "contact": "N/A"
+        },
+        {
+            "title": "Cafe Delight",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/05/DSC_0462-1024x576.jpg",
+            "location": "Ventus",
+            "operating_hours": "Mon-Fri, 8.00am-6.00pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "0001",
+            "contact": "N/A"
+        },
+        {
+            "title": "Central Square",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/05/Central-Square-Edited-1024x684.jpg",
+            "location": "Yusof Ishak House Level 2",
+            "operating_hours": "Mon-Fri, 8.00am-8.00pm\nSat, 8.00am-3.00pm",
+            "no_of_stalls": "",
+            "halal_certified": false,
+            "closed_on": "1001",
+            "contact": "N/A"
+        },
+        {
+            "title": "Crave",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2019/07/Crave-1024x768.jpg",
+            "location": "Yusof Ishak House",
+            "operating_hours": "Mon-Fri, 9.00am-8.00pm\nSat, 9.00am-6.00pm\nVacation Operating Hours:\nMon-Sat, 9.00am-6.00pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "1001",
+            "contact": "N/A"
+        },
+        {
+            "title": "D’Arts @ UCC",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2019/03/CafeUCC-1024x576.jpg",
+            "location": "University Cultural Centre",
+            "operating_hours": "Mon-Fri and event days, 8.30am-5.00pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "0001",
+            "contact": "N/A"
+        },
+        {
+            "title": "E2 Halal Cafeteria",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2019/03/E2-Cafe-1024x684.jpg",
+            "location": "Engineering Block E2",
+            "operating_hours": "Mon-Fri, 7.00am-7.00pm\nSat, 08.00-am-1.00pm\nVacation Operating Hours:\nMon-Fri, 9.00am-4.30pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": true,
+            "closed_on": "0001",
+            "contact": "N/A"
+        },
+        {
+            "title": "Eureka Taste",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2019/08/Eureka-1024x684.jpg",
+            "location": "Medicine Block MD6",
+            "operating_hours": "Mon-Fri: 7.00am-7.00pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "0001",
+            "contact": "N/A"
+        },
+        {
+            "title": "Foodclique",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/05/Food-Clique-1024x576.jpg",
+            "location": "PGPR",
+            "operating_hours": "Mon-Sun, 7.00am-9.30pm",
+            "no_of_stalls": ": 13",
+            "halal_certified": false,
+            "closed_on": "N/A",
+            "contact": "N/A"
+        },
+        {
+            "title": "Frontier",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/05/FP2-1024x576.jpg",
+            "location": "Faculty of Science",
+            "operating_hours": "Mon-Fri, 7.30am-4.00pm/8.00pm*\nSat, 7.30-am-3.00pm\n*Some stalls, during term time only",
+            "no_of_stalls": ": 15",
+            "halal_certified": false,
+            "closed_on": "1001",
+            "contact": "N/A"
+        },
+        {
+            "title": "Jewel Coffee",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/05/Jewel-Coffee-1024x576.jpg",
+            "location": "Medicine Block MD11",
+            "operating_hours": "Mon-Fri, 7.30am-10.00pm\nSat/Sun/PH, 8.00am-5.00pm\nVacation Operating Hours:\nMon-Fri, 7.30am-8.00pm\nSat/Sun/PH, 8.00am-5.00pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "N/A",
+            "contact": "N/A"
+        },
+        {
+            "title": "Li Ji Coffeehouse",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/09/Li-Ji-1024x684.jpg",
+            "location": "Frontier",
+            "operating_hours": "Mon-Fri, 7.00am-7.00pm\nSat, 9.00am-3.00pm\nVacation Operating Hours:\nMon-Fri, 7.00am-7.00pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "0001",
+            "contact": "N/A"
+        },
+        {
+            "title": "Liang Ban Kung Fu",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/05/FASS-Mala-1024x768.jpg",
+            "location": "The Deck Level 2",
+            "operating_hours": "Mon-Sat, 8.00am-8.00pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "1001",
+            "contact": "N/A"
+        },
+        {
+            "title": "Maxx Coffee",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2020/01/Maxx-Coffee-1024x684.jpg",
+            "location": "Central Library",
+            "operating_hours": "Daily, 8.00am-10.00pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "N/A",
+            "contact": "N/A"
+        },
+        {
+            "title": "Nami",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2019/07/i4-Nami-v2-1024x768.jpg",
+            "location": "innovation4.0",
+            "operating_hours": "Mon-Fri, 8.00am-5.30pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "0001",
+            "contact": "N/A"
+        },
+        {
+            "title": "Old Chang Kee",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/05/OCK-1-1024x684.jpg",
+            "location": "Yusof Ishak House",
+            "operating_hours": "Mon-Fri, 7.30am-9.00pm\nSat, 7.30am-4.00pm\nVacation Operating Hours:\nMon-Sat, 7.30am-4.00pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": true,
+            "closed_on": "1001",
+            "contact": "6303 2344"
+        },
+        {
+            "title": "Pasta Express",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/09/Pasta-Express-Science-1024x684.jpg",
+            "location": "Frontier",
+            "operating_hours": "Mon-Fri, 7.00am-7.00pm\nSat, 9.00am-3.00pm\nVacation Operating Hours:\nMon-Fri, 7.00am-7.00pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "0001",
+            "contact": "N/A"
+        },
+        {
+            "title": "PGPR Aircon Food Court",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/05/Pines-Food-Court-1024x576.jpg",
+            "location": "PGPR",
+            "operating_hours": "Mon-Fri, 7.00am-8.30pm\nSat, 8.00am-8.30pm\nSun/PH, 8.00am-8.00pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "N/A",
+            "contact": "N/A"
+        },
+        {
+            "title": "Platypus Food Bar",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/05/Platypus-Scienc-1024x684.jpg",
+            "location": "Science Block S16",
+            "operating_hours": "Mon-Fri, 8.00am-8.00pm\nSat: 8.30am-2.00pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "1001",
+            "contact": "N/A"
+        },
+        {
+            "title": "Platypus Food Bar",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2019/08/Platypus-E-1024x684.jpg",
+            "location": "Engineering Block E2A",
+            "operating_hours": "Mon-Fri, 9.00am-7.30pm\nVacation Operating Hours:\nMon-Fri, 9.00am-5.00pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "N/A",
+            "contact": "N/A"
+        },
+        {
+            "title": "Platypus Food Bar",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2019/08/IMG-20190813-WA0039-002-1024x768.jpg",
+            "location": "Design & Environment Block SDE4",
+            "operating_hours": "Mon-Fri, 8.30am-8.00pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "N/A",
+            "contact": "N/A"
+        },
+        {
+            "title": "Reedz Cafe",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/05/Reedz-SFAH-1024x576.jpg",
+            "location": "Shaw Foundation Alumni House",
+            "operating_hours": "Mon-Fri, 8.30am-5.30pm\nSat/Sun, 8.00am-3.00pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "1101",
+            "contact": "6774 5898"
+        },
+        {
+            "title": "Salad Express X Pasta Express",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2019/10/Pasta-Deck-1024x705.jpg",
+            "location": "The Deck Level 2",
+            "operating_hours": "Mon-Fri, 8.00am-8.00pm\nSat, 8.00am – 3.00pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "1001",
+            "contact": "N/A"
+        },
+        {
+            "title": "Spinelli",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/05/Spinelli-UHall-Edited-1024x684.jpg",
+            "location": "UHall Tan Chin Tuan Wing 1st Level",
+            "operating_hours": "Mon-Fri, 8.00am-6.30pm\nVacation Operating Hours:\nMon-Fri, 8.00am-4.30pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "0001",
+            "contact": "6777 5025"
+        },
+        {
+            "title": "Spinelli Coffee Company",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2019/03/Spinelli-EA-1-1024x684.jpg",
+            "location": "Engineering Block EA",
+            "operating_hours": "Mon-Fri, 8.00am-6.30pm\nVacation Operating Hours:\nMon-Fri, 8.00am-4.30pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "0001",
+            "contact": "N/A"
+        },
+        {
+            "title": "Starbucks",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2020/01/Starbucks-Science-1024x684.jpg",
+            "location": "S9",
+            "operating_hours": "Mon-Fri: 7.30am to 9.00pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "0011",
+            "contact": "N/A"
+        },
+        {
+            "title": "Subway",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/05/Subway-YIH-Edited-1024x684.jpg",
+            "location": "Yusof Ishak House",
+            "operating_hours": "Mon-Sun, 10.00am-10.00pm\nVacation Operating Hours:\nMon-Sun, 10.00am-4.00pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": true,
+            "closed_on": "N/A",
+            "contact": "N/A"
+        },
+        {
+            "title": "Subway Mobile Cart",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/05/subway-E-1-1024x684.jpg",
+            "location": "Engineering Block E4",
+            "operating_hours": "Mon-Fri, 11.00am-6.00pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": true,
+            "closed_on": "1110",
+            "contact": "N/A"
+        },
+        {
+            "title": "Supersnacks",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2019/07/PGP-Super-Snacks-1024x768.jpg",
+            "location": "PGPR",
+            "operating_hours": "Mon-Fri, 12.00pm-1.00am",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "0001",
+            "contact": "N/A"
+        },
+        {
+            "title": "Taiwan Ichiban",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/09/Taiwan-Ichiban-1024x684.jpg",
+            "location": "Frontier",
+            "operating_hours": "Mon-Fri, 7.00am-7.00pm\nSat, 9.00am-3.00pm\nVacation Operating Hours:\nMon-Fri, 7.00am-7.00pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "0001",
+            "contact": "N/A"
+        },
+        {
+            "title": "The Coffee Hut",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/09/Coffee-Hut-1024x767.jpg",
+            "location": "Arts Block AS2 (Beside LT13)",
+            "operating_hours": "Mon-Fri, 8.00am-6.00pm\nVacation\nMon-Fri, 8.00am-3.00pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "0001",
+            "contact": "N/A"
+        },
+        {
+            "title": "The Coffee Roaster",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/05/The-Coffee-Roaster-1-1024x684.jpg",
+            "location": "Blk AS8",
+            "operating_hours": "Mon-Fri, 7.30am-7.00pm\nSat, 9.00am-5.00pm\nVacation Operating Hours:\nMon-Fri, 7.30am-5.30pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "0001",
+            "contact": "N/A"
+        },
+        {
+            "title": "The Deck",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/05/NUS_Roving_2015-73-Deck-1024x684.jpg",
+            "location": "Faculty of Arts & Social Sciences",
+            "operating_hours": "Mon-Fri, 7.30am-4.00pm/8.00pm*\nSat,7.30am-3.00pm\n*Some stalls, during term time only",
+            "no_of_stalls": ": 13",
+            "halal_certified": false,
+            "closed_on": "1001",
+            "contact": "N/A"
+        },
+        {
+            "title": "The Spread",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/05/Spread-1024x683.jpg",
+            "location": "Business School Mochtar Riady Building",
+            "operating_hours": "Mon-Fri, 7.45am-8.45pm\nSat, 8.00am-2.30pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "1001",
+            "contact": "N/A"
+        },
+        {
+            "title": "The Tea Party",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/05/The-Tea-Party-Edited-1024x684.jpg",
+            "location": "University Sports Centre",
+            "operating_hours": "Mon-Sat, 10.30am-10.30pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "1001",
+            "contact": "N/A"
+        },
+        {
+            "title": "Uncle Penyet (Indonesian Express)",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/05/FASS-Indonesian-1024x769.jpg",
+            "location": "The Deck Level 2",
+            "operating_hours": "Mon-Fri, 10.30am-7.30pm\nSat, 10.30am-3.00pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": true,
+            "closed_on": "1110",
+            "contact": "6773 0238"
+        },
+        {
+            "title": "Uncle Penyet Fusion",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/09/Uncle-Penyet-Science-1024x684.jpg",
+            "location": "Frontier",
+            "operating_hours": "Mon-Fri, 7.00am-7.00pm\nSat, 9.00am-3.00pm\nVacation Operating Hours:\nMon-Fri, 7.00am-7.00pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": true,
+            "closed_on": "0001",
+            "contact": "N/A"
+        },
+        {
+            "title": "University Club",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/05/Img1-1024x768.jpg",
+            "location": "Shaw Foundation Alumni House",
+            "operating_hours": "Mon-Fri, 11.30am-2.30pm (Last seating 2pm, Last order 2.10pm)\n6.30pm-10.00pm (Last seating 9.45pm, Last order 10pm)\nLounge Area: 11.30am to 11pm (Last seating 9.45pm, Last order 10pm)",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "0001",
+            "contact": "6779 8919"
+        }
+    ]
+}
