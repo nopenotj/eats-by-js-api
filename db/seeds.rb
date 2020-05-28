@@ -45,7 +45,7 @@ data_hash = JSON.parse(file)
 data_hash["restaurants_data"].each { |restaurant|
   res = Restaurant.create( 
                           title: restaurant["title"],
-                          image_link: restaurant["image_link"]
+                          image_link: restaurant["image_link"],
                           description: "NUS Store", 
                           location: restaurant["location"],
                           operating_hours: restaurant["operating_hours"],
