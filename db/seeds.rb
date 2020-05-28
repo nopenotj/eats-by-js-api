@@ -43,7 +43,6 @@
 file = File.read('./db/restaurants_data.json')
 data_hash = JSON.parse(file)
 data_hash["restaurants_data"].each { |restaurant|
-  pp restaurant["title"]
   res = Restaurant.create( 
                           title: restaurant["title"],
                           description: "NUS Store", 

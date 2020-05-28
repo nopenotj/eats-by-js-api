@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_28_181509) do
+ActiveRecord::Schema.define(version: 2020_05_28_182911) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2020_05_28_181509) do
     t.integer "no_of_stalls"
     t.string "closed_on"
     t.string "contact"
+    t.boolean "halal_certified"
   end
 
   create_table "restaurants_tags", id: false, force: :cascade do |t|
