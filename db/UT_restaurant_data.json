@@ -1,0 +1,124 @@
+{
+    "restaurants_data": [
+        {
+            "title": "2359 Li Ji Coffeehouse",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2019/07/2359-1024x684.jpg",
+            "location": "UTown SRC",
+            "operating_hours": "Mon-Fri, 11.00am-1.00am\nSat/Sun/PH, 11.00am-10.00pm\nVacation Operating Hours:\nMon-Sun, 11.00am-9.00pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "N/A",
+            "contact": "N/A"
+        },
+        {
+            "title": "Agora Cafe",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2019/03/105-1024x768.jpg",
+            "location": "Yale-NUS East Core",
+            "operating_hours": "Mon-Sun, 8.30am-9.00pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "1110",
+            "contact": "N/A"
+        },
+        {
+            "title": "Fine Food",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/05/Fine-Food-1-1024x684.jpg",
+            "location": "Town Plaza",
+            "operating_hours": "Mon-Sun, 7.00am-10.00pm",
+            "no_of_stalls": ": 14",
+            "halal_certified": false,
+            "closed_on": "N/A",
+            "contact": "N/A"
+        },
+        {
+            "title": "Flavours @ UTown",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/05/Flavours-Edited-1024x684.jpg",
+            "location": "UTown Stephen Riady Centre",
+            "operating_hours": "Mon-Sun: 24 hours",
+            "no_of_stalls": ": 10",
+            "halal_certified": false,
+            "closed_on": "N/A",
+            "contact": "N/A"
+        },
+        {
+            "title": "Hwang’s Korean Restaurant",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/05/Hwangs-UTown-1024x684.jpg",
+            "location": "Town Plaza",
+            "operating_hours": "Mon-Sat, 10.00am-10.00pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "1001",
+            "contact": "9833 0603"
+        },
+        {
+            "title": "Sapore Italian Restaurant",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/05/Sapore-1024x684.jpg",
+            "location": "Town Plaza",
+            "operating_hours": "Mon-Sun, 11.00am-10.00pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "N/A",
+            "contact": "6262 0287"
+        },
+        {
+            "title": "Starbucks",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/05/Starbucks-UTown-1024x684.jpg",
+            "location": "Education Resource Centre (ERC)",
+            "operating_hours": "24/7\nVacation:\nMon-Sun, 8.00am-10.00pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "N/A",
+            "contact": "6659 6081"
+        },
+        {
+            "title": "Subway",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/05/Subway-Utown-1024x684.jpg",
+            "location": "Town Plaza",
+            "operating_hours": "Mon-Sat, 10.00am-10.00pm\nSun, 10.00am-9.00pm\nVacation Operating Hours:\nMon-Fri, 11.00am-8.00pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": true,
+            "closed_on": "N/A",
+            "contact": "6659 6109"
+        },
+        {
+            "title": "Supersnacks",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2019/10/Supersnacks-Edited-1024x684.jpg",
+            "location": "Stephen Riady Centre",
+            "operating_hours": "Daily, 11.00am-2.00am\nVacation Operating Hours:\nDaily, 11.00am-2.00am",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "0001",
+            "contact": "N/A"
+        },
+        {
+            "title": "The Royals Bistro",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/05/The-Royals-Bistro.jpg",
+            "location": "Town Plaza",
+            "operating_hours": "Mon-Sat, 11.00am-8.30pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": true,
+            "closed_on": "1001",
+            "contact": "N/A"
+        },
+        {
+            "title": "Udon Don Bar",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2020/01/Udon-1024x689.jpg",
+            "location": "Town Plaza",
+            "operating_hours": "Mon-Sat, 11.00am-10.00pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "1001",
+            "contact": "N/A"
+        },
+        {
+            "title": "Waa Cow",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/05/Waa-Cow-1-1024x684.jpg",
+            "location": "Stephen Riady Centre (SRC)",
+            "operating_hours": "Mon-Thu, 11.30am-7.30pm\nFri, 11.30am-9.30pm\nSat, 12.00pm-3.00pm\nVacation Operating Hours:\nMon-Fri, 11.30am-5.30pm\nSat, 12.00pm-3.00pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "1001",
+            "contact": "N/A"
+        }
+    ]
+}

@@ -46,7 +46,7 @@ data_hash["restaurants_data"].each { |restaurant|
   res = Restaurant.create( 
                           title: restaurant["title"],
                           image_link: restaurant["image_link"],
-                          description: "NUS Store", 
+                          description: Faker::Restaurant.description, 
                           location: restaurant["location"],
                           operating_hours: restaurant["operating_hours"],
                           no_of_stalls: restaurant["no_of_stalls"],
@@ -58,3 +58,20 @@ data_hash["restaurants_data"].each { |restaurant|
 }
 
 
+
+file = File.read('./db/UT_restaurant_data.json')
+data_hash = JSON.parse(file)
+data_hash["restaurants_data"].each { |restaurant|
+  res = Restaurant.create( 
+                          title: restaurant["title"],
+                          image_link: restaurant["image_link"],
+                          description: Faker::Restaurant.description, 
+                          location: restaurant["location"],
+                          operating_hours: restaurant["operating_hours"],
+                          no_of_stalls: restaurant["no_of_stalls"],
+                          halal_certified: restaurant["halal_certified"],
+                          closed_on: restaurant["closed_on"],
+                          contact: restaurant["contact"],
+                          price: 5
+                         )
+}
