@@ -18,4 +18,8 @@ class Restaurant < ApplicationRecord
         sum / count
       end
     end
+
+    def self.search(q)
+      Restaurant.where("title LIKE '%#{q}%'")
+    end
 end
