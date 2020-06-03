@@ -20,6 +20,6 @@ class Restaurant < ApplicationRecord
     end
 
     def self.search(q)
-      Restaurant.where("title LIKE '%#{q}%'")
+      Restaurant.where("LOWER(title) LIKE LOWER('%#{q}%')")
     end
 end
