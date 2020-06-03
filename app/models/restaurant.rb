@@ -3,6 +3,8 @@ class Restaurant < ApplicationRecord
     attribute :description
     attribute :price
 
+    scope :search, ->(q) { where("title LIKE '%#{q}%'") }
+
 
     has_many :reviews, dependent: :destroy
     has_many :dishes, dependent: :destroy
@@ -19,7 +21,4 @@ class Restaurant < ApplicationRecord
       end
     end
 
-    def self.search(q)
-      Restaurant.where("title LIKE '%#{q}%'")
-    end
 end
