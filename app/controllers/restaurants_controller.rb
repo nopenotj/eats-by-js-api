@@ -16,6 +16,17 @@ class RestaurantsController < ApplicationController
     restaurant = Restaurant.find(params[:id])
     render json: RestaurantSerializer.new(restaurant).serialized_json
   end
+  def update
+    authenticate_request
+    if current_user && current_user.isAdmin? 
+      restaurant = Restaurant.find(params[:id])
+      if restaurant.update article_params
+          render json: { status: 'success' }
+      else 
+        render json: { error: restaurant.errors }
+      end
+    end
+  end
   def destroy
     authenticate_request
     if current_user && current_user.isAdmin? 
@@ -24,4 +35,11 @@ class RestaurantsController < ApplicationController
       render json: { status: 'success' }
     end
   end
+
+  private
+
+  def article_params
+    params.require(:restaurant).permit(:title, :description)
+  end
+
 end

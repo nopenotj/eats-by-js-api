@@ -1,6 +1,43 @@
 require 'rails_helper'
 
 RSpec.describe "Restaurants", type: :request do
+  describe "#update" do
+    context "when POST update request is made to controller" do
+      let(:restaurant) { create :restaurant }
+      let(:user) { create :user }
+      let(:token) { JsonWebToken.encode(user_id: user.id) }
+      let(:updated_params) {
+        {
+          restaurant: { 
+            title: Faker::Restaurant.name,
+            description: Faker::Restaurant.description
+          }
+        }
+      }
+
+      it "should not allow unauthenticated requests" do
+         put restaurant_path(restaurant.id)
+         expect(response.body).to match("Not Authorized")
+      end
+
+      it "should allow authenticated requests" do
+         put restaurant_path(restaurant.id), params: updated_params, headers: {'Authorization' => "Bearer #{token}"}
+         expect(response.body).to match("success")
+      end
+
+      context "when request is authenticated" do
+        it "should update the object" do
+          put restaurant_path(restaurant.id), params: updated_params, headers: {'Authorization' => "Bearer #{token}"}
+          restaurant.reload
+
+          expect(response.body).to match("success")
+          expect(restaurant.title).to eq(updated_params[:restaurant][:title])
+          expect(restaurant.description).to eq(updated_params[:restaurant][:description])
+        end
+      end
+    end
+  end
+
   describe "#destroy" do
     context "when destroying" do
       before(:each) {
