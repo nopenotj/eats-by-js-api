@@ -7,6 +7,7 @@ class RestaurantsController < ApplicationController
       render json: RestaurantSerializer.new(restaurants).serialized_json
     else
       restaurants = Restaurant.all
+        .order('id ASC')
         .page(params[:page])
         .per(params[:per_page])
       render json: RestaurantSerializer.new(restaurants).serialized_json
