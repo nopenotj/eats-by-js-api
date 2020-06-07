@@ -1,6 +1,32 @@
 require 'rails_helper'
 
 RSpec.describe "Restaurants", type: :request do
+  describe "#create" do
+    context "when POST create request is made to controller" do
+      let(:user) { create :user }
+      let(:token) { JsonWebToken.encode(user_id: user.id) }
+      let(:attrs) { attributes_for(:restaurant) }
+
+      it "should not allow unauthenticated requests" do
+         post restaurants_path
+         expect(response.body).to match("Not Authorized")
+      end
+
+      it "should allow authenticated requests" do
+         post restaurants_path, params: {restaurant: attrs}, headers: {'Authorization' => "Bearer #{token}"}
+         expect(response.body).to match("success")
+      end
+
+      context "when request is authenticated" do
+        it "should create the object" do
+          post restaurants_path, params: {restaurant: attrs}, headers: {'Authorization' => "Bearer #{token}"}
+
+          expect(response.body).to match("success")
+          expect(Restaurant.find_by(title: attrs[:title])).not_to be_nil
+        end
+      end
+    end
+  end
   describe "#update" do
     context "when POST update request is made to controller" do
       let(:restaurant) { create :restaurant }
@@ -37,7 +63,6 @@ RSpec.describe "Restaurants", type: :request do
       end
     end
   end
-
   describe "#destroy" do
     context "when destroying" do
       before(:each) {
