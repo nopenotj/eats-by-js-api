@@ -35,7 +35,7 @@ class RestaurantsController < ApplicationController
       if restaurant.update restaurant_params
           render json: { status: 'success' }
       else 
-        render json: { error: restaurant.errors }
+        render json: { errors: restaurant.errors }
       end
     end
   end

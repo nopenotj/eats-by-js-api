@@ -3,7 +3,7 @@ class UserController < ApplicationController
     render json: {username: User.find(params[:id]).username}
   end
   def create
-    @user = User.create(params.require(:user).permit(:username,:password))
+    @user = User.create(params.require(:user).permit(:username,:password).merge({role: 0}))
     if @user.valid?
       render json: {data: {status: "success"}}
     else
