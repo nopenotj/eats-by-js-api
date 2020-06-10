@@ -1,6 +1,21 @@
 require 'rails_helper'
 
 RSpec.describe "Restaurants", type: :request do
+  let (:sample_restaurant_json_params) { 
+    {
+      data: {
+        type: "restaurants",
+        attributes: attributes_for(:restaurant)
+      }
+    }
+  }
+  
+  it { should permit(:type, :attribute, :relationships)
+    .for(:create, params: :sample_restaurant_json_params)
+    .on(:user)
+  }
+
+
   describe "#index" do
     context "when GET request is made to /restaurants" do
       it "should return with OK response" do
@@ -35,6 +50,13 @@ RSpec.describe "Restaurants", type: :request do
       let(:user) { create :user }
       let(:token) { JsonWebToken.encode(user_id: user.id) }
       let(:attrs) { attributes_for(:restaurant) }
+      let(:json_request) { 
+        {
+          data: {
+            attributes: attrs
+          }
+        }
+      }
 
       it "should not allow unauthenticated requests" do
         post restaurants_path
@@ -43,23 +65,23 @@ RSpec.describe "Restaurants", type: :request do
       end
 
       it "should allow authenticated requests" do
-        post restaurants_path, params: {restaurant: attrs}, headers: {'Authorization' => "Bearer #{token}"}
+        post restaurants_path, params: json_request, headers: {'Authorization' => "Bearer #{token}"}
         expect(response).to_not have_http_status(:unauthorized)
         expect(response.body).to_not match("Not Authorized")
       end
 
       context "when request is authenticated" do
         it "should create the object" do
-          post restaurants_path, params: {restaurant: attrs}, headers: {'Authorization' => "Bearer #{token}"}
+          post restaurants_path, params: json_request, headers: {'Authorization' => "Bearer #{token}"}
 
           expect(Restaurant.find_by(title: attrs[:title])).not_to be_nil
         end
         it "should return 201 CREATED if sucessful" do
-          post restaurants_path, params: {restaurant: attrs}, headers: {'Authorization' => "Bearer #{token}"}
+          post restaurants_path, params: json_request, headers: {'Authorization' => "Bearer #{token}"}
           expect(response).to have_http_status(:created)
         end
         it "should contain location if sucessful" do
-          post restaurants_path, params: {restaurant: attrs}, headers: {'Authorization' => "Bearer #{token}"}
+          post restaurants_path, params: json_request, headers: {'Authorization' => "Bearer #{token}"}
           expect(response.location).to_not be_nil
         end
       end
@@ -73,9 +95,11 @@ RSpec.describe "Restaurants", type: :request do
       let(:token) { JsonWebToken.encode(user_id: user.id) }
       let(:updated_params) {
         {
-          restaurant: { 
-            title: Faker::Restaurant.name,
-            description: Faker::Restaurant.description
+          data: { 
+            attributes: {
+              title: Faker::Restaurant.name,
+              description: Faker::Restaurant.description
+            }
           }
         }
       }
@@ -95,8 +119,8 @@ RSpec.describe "Restaurants", type: :request do
           subject
           restaurant.reload
 
-          expect(restaurant.title).to eq(updated_params[:restaurant][:title])
-          expect(restaurant.description).to eq(updated_params[:restaurant][:description])
+          expect(restaurant.title).to eq(updated_params[:data][:attributes][:title])
+          expect(restaurant.description).to eq(updated_params[:data][:attributes][:description])
         end
       end
     end

@@ -42,7 +42,7 @@ RSpec.describe Restaurant, type: :model do
           create_list(:restaurant, 3)
           search_term = "a"
           subject.search(search_term).map(&:title).each { |n|
-            expect(n).to include(search_term)
+            expect(n.downcase).to include(search_term.downcase)
           }
         end
       end
