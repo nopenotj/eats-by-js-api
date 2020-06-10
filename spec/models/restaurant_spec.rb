@@ -15,7 +15,7 @@ RSpec.describe Restaurant, type: :model do
   describe "ActiveRecord associations" do
     it { should have_many(:reviews).dependent(:destroy) }
     it { should have_many(:dishes).dependent(:destroy) }
-    it { should have_and_belongs_to_many(:tags) }
+    xit { should have_and_belongs_to_many(:tags) }
   end
 
   describe "public instance methods" do
