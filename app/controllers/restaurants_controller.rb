@@ -22,7 +22,7 @@ class RestaurantsController < ApplicationController
     if current_user && current_user.isAdmin? 
       @restaurant = Restaurant.create(restaurant_params)
       if @restaurant.valid?
-        render json: {data: {status: "success"}}
+        render status: :created, location: @restaurant
       else
         render json: {errors: @restaurant.errors}
       end
@@ -33,7 +33,7 @@ class RestaurantsController < ApplicationController
     if current_user && current_user.isAdmin? 
       restaurant = Restaurant.find(params[:id])
       if restaurant.update restaurant_params
-          render json: { status: 'success' }
+        render status: :ok
       else 
         render json: { errors: restaurant.errors }
       end
@@ -44,7 +44,7 @@ class RestaurantsController < ApplicationController
     if current_user && current_user.isAdmin? 
       restaurant = Restaurant.find(params[:id])
       restaurant.destroy
-      render json: { status: 'success' }
+      render status: :ok
     end
   end
 
