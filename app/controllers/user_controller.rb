@@ -7,7 +7,7 @@ class UserController < ApplicationController
     if @user.valid?
       render json: {data: {status: "success"}}
     else
-      render json: {errors: @user.errors}
+      render json: {errors: @user.errors}, status: :unprocessable_entity
     end
   end
 

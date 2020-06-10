@@ -3,6 +3,9 @@ class Restaurant < ApplicationRecord
     attribute :description
     attribute :price
 
+    validates :title, presence: true
+    validates :price, numericality: { greater_than:0 }
+
 
     has_many :reviews, dependent: :destroy
     has_many :dishes, dependent: :destroy
