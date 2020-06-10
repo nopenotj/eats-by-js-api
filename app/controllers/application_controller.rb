@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::API
+  before_action :authenticate_request
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
   attr_reader :current_user

@@ -1,4 +1,6 @@
 class RestaurantsController < ApplicationController
+  skip_before_action :authenticate_request, only: [:index, :show]
+
   def index
     if params[:q]
       restaurants = Restaurant.search(params[:q])
