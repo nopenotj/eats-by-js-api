@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :authenticate_request, only: [:create, :update, :destroy]
+  skip_before_action :authenticate_request, only: [:index, :show]
 
   def index
     reviews = get_restaurant.reviews
