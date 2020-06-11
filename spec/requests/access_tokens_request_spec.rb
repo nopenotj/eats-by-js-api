@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe "AccessTokens", type: :request do
-
+RSpec.describe "Authentication", type: :request do
+  pending "/authenticate should not require token"
 end

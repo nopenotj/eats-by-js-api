@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :authenticate_request, only: [:show, :create, :profile]
+  skip_before_action :authenticate_request, only: [:show, :create]
 
   def show
     render json: {username: User.find(params[:id]).username}
