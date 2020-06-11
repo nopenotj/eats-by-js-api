@@ -1,4 +1,5 @@
 class TagsController < ApplicationController
+  skip_before_action :authenticate_request, only: [:index, :show, :get_restaurant]
     def index
       tags = []
       if params[:restaurant_id].nil?
