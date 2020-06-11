@@ -16,4 +16,11 @@ RSpec.describe "Users", type: :request do
         expect(response).to have_http_status(:not_found)
       end
     end
+
+  describe "POST #sign_up" do
+    it "should return with 422 unprocessable_entity if params invalid" do
+      post "/sign_up", params: {blah: "blah blah"}
+      expect(response).to have_http_status(:unprocessable_entity)
+    end
+  end
 end
