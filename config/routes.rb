@@ -16,8 +16,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
 
-  post '/sign_up', to: 'user#create'
+  post '/sign_up', to: 'users#create'
 
   post 'authenticate', to: 'authentication#authenticate'
-  get 'profile', to: 'user#profile'
+  get 'profile', to: 'users#profile'
 end
