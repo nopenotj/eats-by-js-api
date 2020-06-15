@@ -6,13 +6,13 @@ class RestaurantsController < ApplicationController
       restaurants = Restaurant.search(params[:q])
         .page(params[:page])
         .per(params[:per_page])
-      render json: RestaurantSerializer.new(restaurants).serialized_json
+      render json: RestaurantSerializer.new(restaurants, meta:{ total_count: Restaurant.count }).serialized_json 
     else
       restaurants = Restaurant.all
         .order('id ASC')
         .page(params[:page])
         .per(params[:per_page])
-      render json: RestaurantSerializer.new(restaurants).serialized_json
+      render json: RestaurantSerializer.new(restaurants, meta: { total_count: Restaurant.count }).serialized_json 
     end
   end
   def show
