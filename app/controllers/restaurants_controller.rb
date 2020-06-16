@@ -6,13 +6,13 @@ class RestaurantsController < ApplicationController
       restaurants = Restaurant.search(params[:q])
         .page(params[:page])
         .per(params[:per_page])
-      render json: RestaurantSerializer.new(restaurants, meta:{ total_count: Restaurant.count }).serialized_json 
+      render json: serialize(restaurants)
     else
       restaurants = Restaurant.all
         .order('id ASC')
         .page(params[:page])
         .per(params[:per_page])
-      render json: RestaurantSerializer.new(restaurants, meta: { total_count: Restaurant.count }).serialized_json 
+      render json: serialize(restaurants)
     end
   end
   def show
@@ -24,9 +24,11 @@ class RestaurantsController < ApplicationController
     if current_user && current_user.isAdmin? 
       @restaurant = Restaurant.create(restaurant_params)
       if @restaurant.valid?
-        render status: :created, location: @restaurant
+        render json: serialize(@restaurant),
+          location: @restaurant,
+          status: :created
       else
-        render json: {errors: @restaurant.errors}
+        render json: {errors: @restaurant.errors}, status: :unprocessable_entity
       end
     end
   end
@@ -35,9 +37,11 @@ class RestaurantsController < ApplicationController
     if current_user && current_user.isAdmin? 
       restaurant = Restaurant.find(params[:id])
       if restaurant.update restaurant_params
-        render status: :ok
+        render json: serialize(@restaurant),
+          status: :ok
       else 
-        render json: { errors: restaurant.errors }
+        render json: { errors: restaurant.errors },
+          status: :unprocessable_entity
       end
     end
   end
@@ -51,6 +55,10 @@ class RestaurantsController < ApplicationController
   end
 
   private
+
+  def serialize(restaurant)
+    RestaurantSerializer.new(restaurant, meta: { total_count: Restaurant.count }).serialized_json
+  end
 
   def restaurant_params
     params.require(:data)
