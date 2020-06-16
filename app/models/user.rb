@@ -11,7 +11,6 @@ class User < ApplicationRecord
   validates :role, numericality: true, presence: true
 
   def isAdmin?
-    # role == 2
-    true
+    role == 2
   end
 end

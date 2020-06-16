@@ -37,7 +37,7 @@ class RestaurantsController < ApplicationController
     if current_user && current_user.isAdmin? 
       restaurant = Restaurant.find(params[:id])
       if restaurant.update restaurant_params
-        render json: serialize(@restaurant),
+        render json: serialize(restaurant),
           status: :ok
       else 
         render json: { errors: restaurant.errors },

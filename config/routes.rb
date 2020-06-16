@@ -14,9 +14,9 @@ Rails.application.routes.draw do
     resources :restaurants, only: [:index, :show]
   end
 
-  resources :users, only: [:show]
+  resources :users, only: [:show, :index, :update, :create]
 
-  post '/sign_up', to: 'users#create'
+  post '/sign_up', to: 'users#sign_up'
 
   post 'authenticate', to: 'authentication#authenticate'
   get 'profile', to: 'users#profile'
