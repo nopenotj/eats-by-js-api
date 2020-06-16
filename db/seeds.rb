@@ -75,3 +75,6 @@ data_hash["restaurants_data"].each { |restaurant|
                           price: 5
                          )
 }
+
+# remember delete lol
+admin_user = User.create(username:"admin", password:"admin", role: 2)
