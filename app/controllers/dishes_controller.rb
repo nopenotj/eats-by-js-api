@@ -5,8 +5,12 @@ class DishesController < ApplicationController
     dishes = []
     if params[:restaurant_id].nil?
       dishes = Dish.all 
+        .page(params[:page])
+        .per(params[:per_page])
     else
       dishes = get_restaurant.dishes
+        .page(params[:page])
+        .per(params[:per_page])
     end
 
     render json: DishSerializer.new(dishes).serialized_json

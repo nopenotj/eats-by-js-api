@@ -54,6 +54,12 @@ class RestaurantsController < ApplicationController
     end
   end
 
+  def add_tag
+    restaurant = Restaurant.find(params[:id])
+    tag = Tag.find_or_create_by(name: params[:name])
+    restaurant.tags << tag
+  end
+
   private
 
   def serialize(restaurant)

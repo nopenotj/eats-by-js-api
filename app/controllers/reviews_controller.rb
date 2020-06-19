@@ -3,6 +3,8 @@ class ReviewsController < ApplicationController
 
   def index
     reviews = get_restaurant.reviews
+      .page(params[:page])
+      .per(params[:per_page])
     render json: ReviewSerializer.new(reviews).serialized_json
   end
 
