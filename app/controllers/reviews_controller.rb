@@ -20,7 +20,7 @@ class ReviewsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
-    @review = Review.create(review_params).merge({
+    @review = Review.create(review_params.merge({
       user_id: current_user.id,
       restaurant_id: params[:restaurant_id]
     }) )
