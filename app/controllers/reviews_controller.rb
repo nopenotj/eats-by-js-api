@@ -20,7 +20,7 @@ class ReviewsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
-    @review = Review.create(params.require(:review).permit(:title,:content,:rating).merge({
+    @review = Review.create(review_params).merge({
       user_id: current_user.id,
       restaurant_id: params[:restaurant_id]
     }) )
@@ -41,6 +41,15 @@ class ReviewsController < ApplicationController
 
 
   private
+  def review_params
+    params.require(:data)
+      .require(:attributes)
+      .permit(
+      :title, 
+      :content,
+      :rating,
+    )
+  end
   def get_restaurant
     @restaurant = Restaurant.find(params[:restaurant_id])
   end
