@@ -4,7 +4,7 @@ class Restaurant < ApplicationRecord
     tsearch: {
       prefix: true,
       dictionary: 'english'
-    } 
+    },
     trigram: {
     }
   }
