@@ -1,4 +1,7 @@
 class Restaurant < ApplicationRecord
+  include PgSearch::Model
+  pg_search_scope :search, against: [:title, :location]
+
     attribute :title
     attribute :description
     attribute :price
@@ -22,7 +25,4 @@ class Restaurant < ApplicationRecord
       end
     end
 
-    def self.search(q)
-      Restaurant.where("LOWER(title) LIKE LOWER('%#{q}%')")
-    end
 end

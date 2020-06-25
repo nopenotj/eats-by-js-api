@@ -16,6 +16,8 @@ gem 'jwt'
 gem 'simple_command'
 gem 'faker'
 gem 'rack-cors', :require => 'rack/cors'
+gem 'pg'
+gem 'pg_search'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.7'
