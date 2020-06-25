@@ -6,6 +6,8 @@ class RestaurantsController < ApplicationController
       if params[:lat] && params[:lng]
         restaurants = Restaurant.search(params[:q])
           .sort_by{|s| s.distance_to([params[:lat],params[:lng]])}
+          
+        restaurants = Kaminari.paginate_array(restaurants)
           .page(params[:page])
           .per(params[:per_page])
         render json: serialize(
@@ -25,6 +27,8 @@ class RestaurantsController < ApplicationController
       if params[:lat] && params[:lng]
         restaurants = Restaurant.all
           .sort_by{|s| s.distance_to([params[:lat],params[:lng]])}
+
+        restaurants = Kaminari.paginate_array(restaurants)
           .page(params[:page])
           .per(params[:per_page])
         render json: serialize(
