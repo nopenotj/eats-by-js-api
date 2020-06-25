@@ -5,8 +5,6 @@ class Restaurant < ApplicationRecord
       prefix: true,
       dictionary: 'english'
     },
-    trigram: {
-    }
   }
 
     attribute :title
