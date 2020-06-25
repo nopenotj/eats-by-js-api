@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_07_134216) do
+ActiveRecord::Schema.define(version: 2020_06_25_050523) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,9 @@ ActiveRecord::Schema.define(version: 2020_06_07_134216) do
     t.string "contact"
     t.boolean "halal_certified"
     t.integer "state"
+    t.decimal "lng", precision: 10, scale: 6
+    t.decimal "lat", precision: 10, scale: 6
+    t.index ["lat", "lng"], name: "index_restaurants_on_lat_and_lng"
   end
 
   create_table "restaurants_tags", id: false, force: :cascade do |t|
