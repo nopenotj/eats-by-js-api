@@ -6,13 +6,33 @@ class RestaurantsController < ApplicationController
       restaurants = Restaurant.search(params[:q])
         .page(params[:page])
         .per(params[:per_page])
-      render json: serialize(restaurants)
+      if params[:lat] && params[:lng]
+        render json: serialize(
+          restaurants.sort_by{|s| s.distance_to([params[:lat],params[:lng]])},
+          {
+            lat: params[:lat],
+            lng: params[:lng],
+          }
+        ) 
+      else
+        render json: serialize(restaurants)
+      end
     else
       restaurants = Restaurant.all
         .order('id ASC')
         .page(params[:page])
         .per(params[:per_page])
-      render json: serialize(restaurants)
+      if params[:lat] && params[:lng]
+        render json: serialize(
+          restaurants.sort_by{|s| s.distance_to([params[:lat],params[:lng]])},
+          params: {
+            lat: params[:lat],
+            lng: params[:lng],
+          }
+        ) 
+      else
+        render json: serialize(restaurants)
+      end
     end
   end
   def show
@@ -62,8 +82,11 @@ class RestaurantsController < ApplicationController
 
   private
 
-  def serialize(restaurant)
-    RestaurantSerializer.new(restaurant, meta: { total_count: Restaurant.count }).serialized_json
+  def serialize(restaurant, loc)
+    RestaurantSerializer.new(restaurant, {
+      params: loc,
+      meta: { total_count: Restaurant.count }
+    }).serialized_json
   end
 
   def restaurant_params
