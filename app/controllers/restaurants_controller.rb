@@ -3,34 +3,42 @@ class RestaurantsController < ApplicationController
 
   def index
     if params[:q] && !params[:q].empty? 
-      restaurants = Restaurant.search(params[:q])
-        .page(params[:page])
-        .per(params[:per_page])
       if params[:lat] && params[:lng]
+        restaurants = Restaurant.search(params[:q])
+          .sort_by{|s| s.distance_to([params[:lat],params[:lng]])}
+          .page(params[:page])
+          .per(params[:per_page])
         render json: serialize(
-          restaurants.sort_by{|s| s.distance_to([params[:lat],params[:lng]])},
+          restaurants,
           {
             lat: params[:lat],
             lng: params[:lng],
           }
         ) 
       else
+        restaurants = Restaurant.search(params[:q])
+          .page(params[:page])
+          .per(params[:per_page])
         render json: serialize(restaurants)
       end
     else
-      restaurants = Restaurant.all
-        .order('id ASC')
-        .page(params[:page])
-        .per(params[:per_page])
       if params[:lat] && params[:lng]
+        restaurants = Restaurant.all
+          .sort_by{|s| s.distance_to([params[:lat],params[:lng]])}
+          .page(params[:page])
+          .per(params[:per_page])
         render json: serialize(
-          restaurants.sort_by{|s| s.distance_to([params[:lat],params[:lng]])},
+          restaurants,
           {
             lat: params[:lat],
             lng: params[:lng],
           }
         ) 
       else
+        restaurants = Restaurant.all
+          .order('id ASC')
+          .page(params[:page])
+          .per(params[:per_page])
         render json: serialize(restaurants)
       end
     end
@@ -82,7 +90,9 @@ class RestaurantsController < ApplicationController
 
   private
 
-  def serialize(restaurant, loc)
+  def serialize(*args)
+    restaurant = args[0]
+    loc = args[1]
     RestaurantSerializer.new(restaurant, {
       params: loc,
       meta: { total_count: Restaurant.count }
