@@ -1,6 +1,13 @@
 class Restaurant < ApplicationRecord
   include PgSearch::Model
-  pg_search_scope :search, against: [:title, :location]
+  pg_search_scope :search, against: [:title, :location], using: {
+    tsearch: {
+      prefix: true,
+      dictionary: 'english'
+    } 
+    trigram: {
+    }
+  }
 
     attribute :title
     attribute :description
