@@ -5,9 +5,6 @@ class RestaurantSerializer
     attributes :latitude, &:lat
     attributes :longitude, &:lng
 
-    attribute :distance, if: Proc.new { |record, params|
-      params[:lat] && params[:lng]
-    }
     attributes :distance do |res, params|
       res.distance_to([params[:lat], params[:lng]])
     end

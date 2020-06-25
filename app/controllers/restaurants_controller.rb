@@ -25,7 +25,7 @@ class RestaurantsController < ApplicationController
       if params[:lat] && params[:lng]
         render json: serialize(
           restaurants.sort_by{|s| s.distance_to([params[:lat],params[:lng]])},
-          params: {
+          {
             lat: params[:lat],
             lng: params[:lng],
           }
