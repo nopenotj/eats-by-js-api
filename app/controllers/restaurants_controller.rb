@@ -68,7 +68,9 @@ class RestaurantsController < ApplicationController
     authenticate_request
     if current_user && current_user.isAdmin? 
       restaurant = Restaurant.find(params[:id])
-      if restaurant.update restaurant_params
+      if restaurant.update restaurant_params.except(:tags_id)
+        restaurant.tags.delete_all
+        restaurant.tags << restaurant_params[:tags_id].map { |s| Tag.find(s)}
         render json: serialize(restaurant),
           status: :ok
       else 
@@ -117,6 +119,7 @@ class RestaurantsController < ApplicationController
       :closed_on,
       :contact,
       :halal_certified,
+      :tags_id => [],
     )
   end
 
