@@ -2,51 +2,20 @@ class RestaurantsController < ApplicationController
   skip_before_action :authenticate_request, only: [:index, :show]
 
   def index
-    if params[:q] && !params[:q].empty? 
-      if params[:lat] && params[:lng]
-        restaurants = Restaurant.search(params[:q])
-          .sort_by{|s| s.distance_to([params[:lat],params[:lng]])}
-          
-        restaurants = Kaminari.paginate_array(restaurants)
-          .page(params[:page])
-          .per(params[:per_page])
-        render json: serialize(
-          restaurants,
-          {
-            lat: params[:lat],
-            lng: params[:lng],
-          }
-        ) 
-      else
-        restaurants = Restaurant.search(params[:q])
-          .page(params[:page])
-          .per(params[:per_page])
-        render json: serialize(restaurants)
-      end
-    else
-      if params[:lat] && params[:lng]
-        restaurants = Restaurant.all
-          .sort_by{|s| s.distance_to([params[:lat],params[:lng]])}
+    restaurants = search_query_present? ? Restaurant.search(params[:q]) : Restaurant.all
+    restaurants = location_present? ? restaurants.sort_by{|s| s.distance_to([params[:lat],params[:lng]])} : restaurants.order('id ASC')
+    restaurants = location_present? ? Kaminari.paginate_array(restaurants) : restaurants
+    restaurants = restaurants
+      .page(params[:page])
+      .per(params[:per_page])
 
-        restaurants = Kaminari.paginate_array(restaurants)
-          .page(params[:page])
-          .per(params[:per_page])
-        render json: serialize(
-          restaurants,
-          {
-            lat: params[:lat],
-            lng: params[:lng],
-          }
-        ) 
-      else
-        restaurants = Restaurant.all
-          .order('id ASC')
-          .page(params[:page])
-          .per(params[:per_page])
-        render json: serialize(restaurants)
-      end
+    if location_present?
+      render json: serialize(restaurants, { lat: params[:lat], lng: params[:lng], })
+    else
+      render json: serialize(restaurants)
     end
   end
+
   def show
     restaurant = Restaurant.find(params[:id])
     render json: RestaurantSerializer.new(restaurant).serialized_json
@@ -95,6 +64,13 @@ class RestaurantsController < ApplicationController
   end
 
   private
+
+  def search_query_present?
+    params[:q] && !params[:q].empty? 
+  end
+  def location_present?
+    params[:lat] && params[:lng]
+  end
 
   def serialize(*args)
     restaurant = args[0]

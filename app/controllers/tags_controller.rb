@@ -4,7 +4,6 @@ class TagsController < ApplicationController
       tags = []
       if !params[:filter].nil?
         hash = JSON.parse params[:filter]
-        pp hash["id"]
         tags = Tag.where(id: hash["id"])
       elsif params[:restaurant_id].nil?
         tags = Tag.all
