@@ -4,8 +4,8 @@
 ### Clone the repository
 
 ```shell
-git clone git@github.com:juliendargelos/project.git
-cd project
+git clone https://github.com/nopenotj/eats-by-js-api.git
+cd eats-by-js-api
 ```
 
 ### Check your Ruby version
