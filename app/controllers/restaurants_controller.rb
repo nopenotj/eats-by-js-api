@@ -2,9 +2,24 @@ class RestaurantsController < ApplicationController
   skip_before_action :authenticate_request, only: [:index, :show]
 
   def index
+
+
     restaurants = search_query_present? ? Restaurant.search(params[:q]) : Restaurant.all
     restaurants = location_present? ? restaurants.sort_by{|s| s.distance_to([params[:lat],params[:lng]])} : restaurants.order('id ASC')
     restaurants = location_present? ? Kaminari.paginate_array(restaurants) : restaurants
+
+
+    if !params[:tags_id].nil?
+      tags = JSON.parse params[:tags_id]
+
+      restaurants = restaurants.filter {|res| 
+        resTags = res.tags.map(&:id)
+        tags.all? { |e| resTags.include?(e.to_i) }
+      }
+      restaurants = Kaminari.paginate_array(restaurants)
+    end
+
+
     restaurants = restaurants
       .page(params[:page])
       .per(params[:per_page])
