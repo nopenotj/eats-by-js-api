@@ -9,7 +9,7 @@ class RestaurantsController < ApplicationController
     restaurants = location_present? ? Kaminari.paginate_array(restaurants) : restaurants
 
 
-    if !params[:tags_id].nil?
+    if params[:tags_id].present?
       tags = JSON.parse params[:tags_id]
 
       restaurants = restaurants.filter {|res| 
