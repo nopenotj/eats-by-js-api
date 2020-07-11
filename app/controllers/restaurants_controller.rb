@@ -86,7 +86,7 @@ class RestaurantsController < ApplicationController
     params[:q] && !params[:q].empty? 
   end
   def location_present?
-    params[:lat] && params[:lng]
+    params[:lat].present? && params[:lng].present?
   end
 
   def serialize(*args)
