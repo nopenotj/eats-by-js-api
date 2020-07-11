@@ -112,6 +112,8 @@ class RestaurantsController < ApplicationController
       :closed_on,
       :contact,
       :halal_certified,
+      :lat,
+      :lng,
       :tags_id => [],
     )
   end
