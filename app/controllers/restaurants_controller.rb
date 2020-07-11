@@ -3,9 +3,9 @@ class RestaurantsController < ApplicationController
 
   def index
 
-
     restaurants = search_query_present? ? Restaurant.search(params[:q]) : Restaurant.all
     restaurants = location_present? ? restaurants.sort_by{|s| s.distance_to([params[:lat],params[:lng]])} : restaurants.order('id ASC')
+    restaurants = params[:sort_by].present? && !location_present? ? restaurants.order(params[:sort_by]) : restaurants
 
     if params[:tags_id].present?
       tags = JSON.parse params[:tags_id]
