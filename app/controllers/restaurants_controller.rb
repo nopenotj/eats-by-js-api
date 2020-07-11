@@ -6,8 +6,6 @@ class RestaurantsController < ApplicationController
 
     restaurants = search_query_present? ? Restaurant.search(params[:q]) : Restaurant.all
     restaurants = location_present? ? restaurants.sort_by{|s| s.distance_to([params[:lat],params[:lng]])} : restaurants.order('id ASC')
-    restaurants = location_present? ? Kaminari.paginate_array(restaurants) : restaurants
-
 
     if params[:tags_id].present?
       tags = JSON.parse params[:tags_id]
@@ -17,7 +15,10 @@ class RestaurantsController < ApplicationController
         tags.all? { |e| resTags.include?(e.to_i) }
       }
       restaurants = Kaminari.paginate_array(restaurants)
+    else
+      restaurants = location_present? ? Kaminari.paginate_array(restaurants) : restaurants
     end
+
 
 
     restaurants = restaurants
