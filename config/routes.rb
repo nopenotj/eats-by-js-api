@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :restaurants, only: [:index, :create, :show, :destroy, :update] do
-    resources :dishes, only: [:index, :show]
-    resources :deals, only: [:index, :show]
+    resources :dishes, only: [:index, :show, :create, :update, :destroy]
+    resources :deals, only: [:index, :show, :create, :update, :destroy]
     resources :tags, only: [:index, :show]
     resources :reviews
   end
@@ -11,11 +11,11 @@ Rails.application.routes.draw do
     post '/accept_request', to: 'restaurant_requests#accept_request'
   end
 
-  resources :dishes, only: [:index, :show] do
+  resources :dishes do
     resources :restaurants, only: [:index, :show]
   end
 
-  resources :deals, only: [:index, :show] do
+  resources :deals do
     resources :restaurants, only: [:index, :show]
   end
 

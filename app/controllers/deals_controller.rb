@@ -20,8 +20,54 @@ class DealsController < ApplicationController
     render json: DealSerializer.new(deal).serialized_json
   end
 
+  def create
+    authenticate_request
+    if current_user && ( current_user.isAdmin? || current_user.restaurant_id.to_i == params[:id].to_i )
+      @deal = Deal.create(restaurant_params)
+      if @deal.valid?
+        render json: DealSerializer.new(dishes).serialized_json
+          location: @deal,
+          status: :created
+      else
+        render json: {errors: @deal.errors}, status: :unprocessable_entity
+      end
+    end
+  end
+  def update
+    authenticate_request
+    if current_user && ( current_user.isAdmin? || current_user.restaurant_id.to_i == params[:id].to_i )
+      deal = Deal.find(params[:id])
+      if deal.update dish_params
+        render json: DealSerializer.new(dishes).serialized_json,
+          status: :ok
+      else 
+        render json: { errors: deal.errors },
+          status: :unprocessable_entity
+      end
+    end
+  end
+  def destroy
+    authenticate_request
+    if current_user && ( current_user.isAdmin? || current_user.restaurant_id.to_i == params[:id].to_i )
+      deal = Deal.find(params[:id])
+      deal.destroy
+      render status: :ok
+    end
+  end
+
   private
   def get_restaurant
     @restaurant = Restaurant.find(params[:restaurant_id])
+  end
+  def deal_params
+    params.require(:data)
+      .require(:attributes)
+      .permit(
+      :title, 
+      :description,
+      :start_time,
+      :end_time,
+      :restaurant_id
+    )
   end
 end
