@@ -6,6 +6,10 @@ Rails.application.routes.draw do
     resources :reviews
   end
 
+  resources :restaurant_requests, only: [:index, :create, :show, :destroy, :update] do
+    post '/accept_request', to: 'restaurant_requests#accept_request'
+  end
+
   resources :dishes, only: [:index, :show] do
     resources :restaurants, only: [:index, :show]
   end

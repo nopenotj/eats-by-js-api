@@ -10,6 +10,11 @@ class ApplicationController < ActionController::API
     render json: { errors: 'Not Authorized' }, status: 401 unless @current_user
   end
 
+  def authenticate_admin
+    @current_user = AuthorizeApiRequest.call(request.headers).result
+    render json: { errors: 'Not Authorized' }, status: 401 unless @current_user && @current_user.isAdmin?
+  end
+
   private
 
   def record_not_found

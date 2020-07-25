@@ -94,7 +94,7 @@ class RestaurantsController < ApplicationController
     loc = args[1]
     RestaurantSerializer.new(restaurant, {
       params: loc,
-      meta: { total_count: restaurant.count }
+      meta: { total_count: Restaurant.count }
     }).serialized_json
   end
 

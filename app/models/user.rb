@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   has_secure_password
   has_many :reviews
+  has_many :restaurant_requests
   validates :username, uniqueness: true, presence: true
   validates :role, numericality: true, presence: true
 
