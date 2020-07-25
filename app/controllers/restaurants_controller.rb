@@ -52,7 +52,7 @@ class RestaurantsController < ApplicationController
   end
   def update
     authenticate_request
-    if current_user && current_user.isAdmin? 
+    if current_user && ( current_user.isAdmin? || current_user.restaurant_id.to_i == params[:id].to_i )
       restaurant = Restaurant.find(params[:id])
       if restaurant.update restaurant_params.except(:tags_id)
         restaurant.tags.delete_all
