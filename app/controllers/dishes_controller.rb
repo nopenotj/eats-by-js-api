@@ -24,7 +24,7 @@ class DishesController < ApplicationController
     if current_user && ( current_user.isAdmin? || current_user.restaurant_id.to_i == params[:id].to_i )
       @dish = Dish.create(restaurant_params)
       if @dish.valid?
-        render json: DishSerializer.new(dishes).serialized_json
+        render json: DishSerializer.new(dishes).serialized_json,
           location: @dish,
           status: :created
       else
