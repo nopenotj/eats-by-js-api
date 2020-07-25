@@ -15,6 +15,10 @@ Rails.application.routes.draw do
     resources :restaurants, only: [:index, :show]
   end
 
+  resources :deals, only: [:index, :show] do
+    resources :restaurants, only: [:index, :show]
+  end
+
   resources :tags, only: [:index, :show, :create] do
     resources :restaurants, only: [:index, :show]
   end

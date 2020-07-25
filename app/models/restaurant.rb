@@ -23,6 +23,7 @@ class Restaurant < ApplicationRecord
 
     has_many :reviews, dependent: :destroy
     has_many :dishes, dependent: :destroy
+    has_many :deals, dependent: :destroy
     has_and_belongs_to_many :tags 
 
     def rating 
