@@ -25,7 +25,7 @@ class DealsController < ApplicationController
     if current_user && ( current_user.isAdmin? || current_user.restaurant_id.to_i == params[:id].to_i )
       @deal = Deal.create(restaurant_params)
       if @deal.valid?
-        render json: DealSerializer.new(@deal).serialized_json
+        render json: DealSerializer.new(@deal).serialized_json,
           location: @deal,
           status: :created
       else
