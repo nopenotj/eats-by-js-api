@@ -23,7 +23,7 @@ class DealsController < ApplicationController
   def create
     authenticate_request
     if current_user && ( current_user.isAdmin? || current_user.restaurant_id.to_i == params[:id].to_i )
-      @deal = Deal.create(restaurant_params)
+      @deal = Deal.create(deal_params)
       if @deal.valid?
         render json: DealSerializer.new(@deal).serialized_json,
           location: @deal,
