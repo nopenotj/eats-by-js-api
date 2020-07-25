@@ -60,7 +60,8 @@ class UsersController < ApplicationController
       .permit(
         :username,
         :password,
-        :role
+        :role,
+        :restaurant_id
     )
   end
 end
