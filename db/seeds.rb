@@ -76,38 +76,57 @@
 #                          )
 # }
 
-#load the excel file
-excel_file = Roo::Spreadsheet.open('./db/eats_by_js_restaurant_data.xlsx')
-#navigate to specific sheet
-excel_file.sheet(0)
-#select row range you wish to iterate over
-2.upto(56) do |line|
-  title = excel_file.cell(line, 'B')
-  description = excel_file.cell(line, 'C')
-  price = excel_file.cell(line, 'E')
-  image_link = excel_file.cell(line, 'F')
-  location = excel_file.cell(line, 'G')
-  operating_hours = excel_file.cell(line, 'H')
-  no_of_stalls = excel_file.cell(line, 'I')
-  halal_certified = excel_file.cell(line, 'J')
-  closed_on = excel_file.cell(line, 'K') == "N/A" ? nil : excel_file.cell(line, 'K')
-  latitude = excel_file.cell(line, 'L')
-  longitude = excel_file.cell(line, 'M')
-
- Restaurant.create!(
-   title: title, 
-   description: description,
-   price: price,
-   image_link: image_link,
-   location: location,
-   operating_hours: operating_hours,
-   no_of_stalls: no_of_stalls,
-   halal_certified: halal_certified,
-   closed_on: closed_on,
-   lat: latitude,
-   lng: longitude,
- )
-end
+# #load the excel file
+# excel_file = Roo::Spreadsheet.open('./db/eats_by_js_restaurant_data.xlsx')
+# #navigate to specific sheet
+# excel_file.sheet(0)
+# #select row range you wish to iterate over
+# 2.upto(56) do |line|
+#   title = excel_file.cell(line, 'B')
+#   description = excel_file.cell(line, 'C')
+#   price = excel_file.cell(line, 'E')
+#   image_link = excel_file.cell(line, 'F')
+#   location = excel_file.cell(line, 'G')
+#   operating_hours = excel_file.cell(line, 'H')
+#   no_of_stalls = excel_file.cell(line, 'I')
+#   halal_certified = excel_file.cell(line, 'J')
+#   closed_on = excel_file.cell(line, 'K') == "N/A" ? nil : excel_file.cell(line, 'K')
+#   latitude = excel_file.cell(line, 'L')
+#   longitude = excel_file.cell(line, 'M')
+# 
+#  Restaurant.create!(
+#    title: title, 
+#    description: description,
+#    price: price,
+#    image_link: image_link,
+#    location: location,
+#    operating_hours: operating_hours,
+#    no_of_stalls: no_of_stalls,
+#    halal_certified: halal_certified,
+#    closed_on: closed_on,
+#    lat: latitude,
+#    lng: longitude,
+#  )
+# end
 
 # remember delete lol
-admin_user = User.create(username:"admin", password:"admin", role: 2)
+# admin_user = User.create(username:"admin", password:"admin", role: 2)
+
+file = File.read('./db/other_stores_data.json')
+data_hash = JSON.parse(file)
+data_hash["stores_data"].each { |restaurant|
+  res = Restaurant.create( 
+                          title: restaurant["title"],
+                          image_link: restaurant["image_link"],
+                          description: Faker::Restaurant.description, 
+                          location: restaurant["location"],
+                          operating_hours: restaurant["operating_hours"],
+                          no_of_stalls: restaurant["no_of_stalls"],
+                          halal_certified: restaurant["halal_certified"],
+                          closed_on: restaurant["closed_on"],
+                          contact: restaurant["contact"],
+                          price: rand(5..20),
+                          lat: restaurant["latitude"],
+                          lng: restaurant["longitude"],
+                         )
+}

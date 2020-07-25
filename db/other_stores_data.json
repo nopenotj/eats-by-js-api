@@ -1,0 +1,136 @@
+{
+    "stores_data": [
+        {
+            "title": "7-Eleven Convenience Store",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/05/7-11-YIH-1024x684.jpg",
+            "location": "Yusof Ishak House, 31 Lower Kent Ridge Rd #01-03, Singapore 119078",
+            "operating_hours": "24/7",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "N/A",
+            "contact": "6773 6497",
+			"longitude": 1.2987824,
+			"latitude": 103.7748617
+        },
+        {
+            "title": "Cheers Convenience Store",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/05/Cheers-UTown-1024x684.jpg",
+            "location": "Town Plaza, 1 Create Way, CREATE Tower #01-01, NUS University Town, Singapore, 138602",
+            "operating_hours": "24/7",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "N/A",
+            "contact": "6659 6017",
+			"longitude": 1.3035244,
+			"latitude": 103.7739370
+        },
+        {
+            "title": "Cheers Unmanned Convenience Store",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2019/03/Cheers-E-1024x684.jpg",
+            "location": "Engineering Block E3, 2 Engineering Drive 3, Singapore 117581",
+            "operating_hours": "24/7",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "N/A",
+            "contact": "N/A",
+			"longitude": 1.29925261,
+			"latitude": 103.77176732
+        },
+        {
+            "title": "Cheers Unmanned Convenience Store",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2019/07/Cheer-Science-1024x684.jpg",
+            "location": "Frontier, 12 Science Drive 2, Singapore 117549",
+            "operating_hours": "24/7",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "N/A",
+            "contact": "N/A",
+			"longitude": 1.2963512,
+			"latitude": 103.77987295
+        },
+        {
+            "title": "FairPricexpress",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/05/Fairprice-Utown-1024x684.jpg",
+            "location": "UTown Stephen Riady Centre, 2 College Avenue West #01-05, 138607",
+            "operating_hours": "24/7",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "N/A",
+            "contact": "6694 4957",
+			"longitude": 1.30485161,
+			"latitude": 103.77249151
+        },
+        {
+            "title": "Octobox",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2019/08/Octobox1-1024x684.jpg",
+            "location": "UTown Stephen Riady Centre, 2 College Avenue West #01-08, 138607",
+            "operating_hours": "Mon-Sun: 24 hours",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "N/A",
+            "contact": "N/A",
+			"longitude": 1.30441721,
+			"latitude": 103.77290457
+        },
+        {
+            "title": "OMO Store",
+            "image_link": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2019/10/OMO-1-1024x755.jpg",
+            "location": "COM1, 13 Computing Dr, Singapore 117417",
+            "operating_hours": "Daily, 10.00am-6.00pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "N/A",
+            "contact": "N/A",
+			"longitude": 1.29471011,
+			"latitude": 103.77414376
+        },
+        {
+            "title": "LiHO",
+            "image_link": "https://lh5.googleusercontent.com/p/AF1QipNGpmlPcsrP0JxiHA0RvbWjHJgYo_29fYelC3Ro=w203-h152-k-no",
+            "location": "Yusof Ishak House Level 2, 31 Lower Kent Ridge Road, Singapore 119078",
+            "operating_hours": "Mon-Fri: 10:30am-8:00pm, Sat: 10:00am-3:00pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "N/A",
+            "contact": "6265 6903",
+			"longitude": 1.2985883,
+			"latitude": 103.7748852
+        },
+        {
+            "title": "Gong Cha",
+            "image_link": "https://lh5.googleusercontent.com/p/AF1QipOnEe0plvNNNo2tYXzhVJmJSPYnBILx5c8AhsNL=s677-k-no",
+            "location": "Frontier, 12 Science Drive 2, Singapore 117549",
+            "operating_hours": "Mon-Fri: 10:00am-8:00pm, Sat: 10:00am-2:00pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "N/A",
+            "contact": "N/A",
+			"longitude": 1.29639947,
+			"latitude": 103.78079563
+        },
+        {
+            "title": "Gong Cha",
+            "image_link": "https://outside-in.nus.edu.sg/wp-content/uploads/sites/26/2018/01/IMG_3025-768x575.jpg",
+            "location": "Fine Food, Town Plaza, National University Of Singapore, 1 Create Way, Town Plaza, 138602",
+            "operating_hours": "Daily, 10:00am-9:00pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": false,
+            "closed_on": "N/A",
+            "contact": "N/A",
+			"longitude": 1.30386482,
+			"latitude": 103.77330691
+        },
+		{
+            "title": "Swee Heng 1989",
+            "image_link": "https://sweeheng1989.com.sg/UploadedImg/StoreLocator/17032020_25105_PM_CL20%20edited.jpg",
+            "location": "Foodclique, UTown Stephen Riady Centre Level 2, 2 College Ave West, Singapore 138607",
+            "operating_hours": "Mon-Fri: 8:00am-8:00pm, Sat & Sun: 9:30am-6:00pm",
+            "no_of_stalls": "N/A",
+            "halal_certified": true,
+            "closed_on": "N/A",
+            "contact": "6902 7264",
+			"longitude": 1.3046612,
+			"latitude": 103.7725493
+        }
+    ]
+}
